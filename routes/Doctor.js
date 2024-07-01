@@ -24,7 +24,7 @@ export const getDoctorById = async (req, res) => {
     }
 }
 
-export const createDoctor = async (req, res) => {
+/*export const createDoctor = async (req, res) => {
     try {
         await data.create(req.body);
         res.json({
@@ -33,7 +33,7 @@ export const createDoctor = async (req, res) => {
     } catch (error) {
         res.json({ message: error.message });
     }
-}
+}*/
 
 export const updateDoctor = async (req, res) => {
     try {

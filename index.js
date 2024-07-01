@@ -1,34 +1,27 @@
 import "./db.json";
+import { deleteDoctor, getAllDoctors, getDoctorById, updateDoctor } from "./routes/Doctor";
 const express = require("express");
 const bodyParser = require("body-parser");
 const fs = require("fs");
 
 // Create the express app
 const app = express();
-const port = 3000;
 
 // middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // routes
-const route = require("./routes/Routes")
-app.use("/", routes)
+const router = express.Router();
 
-
-
-// util functions
-const saveData = (data) => {
-    const stringifyData = JSON.stringify(data)
-    fs.writeFileSync(data, stringifyData)
-}
-
-const getData = (data) => {
-    const jsonData = fs.readFileSync(data)
-    return JSON.parse(jsonData)
-}
+router.get("/", getAllDoctors);
+router.get("/:id", getDoctorById);
+router.put("/:id", updateDoctor);
+router.delete("/:id", deleteDoctor);
 
 // start server
 app.listen(3000, () => {
     console.log(`Server started at port http://localhost:3000`);
 });
+
+export default router;
