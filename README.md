@@ -18,6 +18,17 @@ puis : `npm start`
 
 Les endpoints (points d'accès) sont définis dans le fichier `db.json`
 
+## Opérations
+
+Il est possible de faire les meme opérations de CRUD classique 👍
+
+| Opération | HTTP |
+| --------- | ---- |
+| Création | POST |
+| Récupération | GET |
+| Modification | PUT |
+| Suppression | DELETE |
+
 ### GET
 
 | Objectif                  | Endpoint                          | Paramètres        |
