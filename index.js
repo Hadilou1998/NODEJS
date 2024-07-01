@@ -18,10 +18,10 @@ app.use("/doctors", listDoctors);
 // routes
 const router = express.Router();
 
-router.get("/", getAllDoctors);
-router.get("/:id", getDoctorById);
-router.put("/:id", updateDoctor);
-router.delete("/:id", deleteDoctor);
+router.get("/doctors", getAllDoctors);
+router.get("/show", getDoctorById);
+router.put("/edit", updateDoctor);
+router.delete("/delete", deleteDoctor);
 
 // start server
 app.listen(3000, () => {
