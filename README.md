@@ -31,10 +31,4 @@ Les endpoints (points d'accès) sont définis dans le fichier `db.json`
 | Pagination                | /doctors?_limite=1                | `_limite`           |
 
 
-### 
-
-calcul-addition.com/?a=1341&b=4321
-
-resp : [ {
-    "result": 5661
-} ]
+###
