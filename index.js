@@ -1,6 +1,6 @@
 import "./db.json";
-import { deleteDoctor, getAllDoctors, getDoctorById, updateDoctor } from "./routes/Doctor";
-import cors from "cors"
+import listDoctors from "./routes/Doctor";
+import cors from "cors";
 const express = require("express");
 const bodyParser = require("body-parser");
 const fs = require("fs");
@@ -11,6 +11,9 @@ const app = express();
 // middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
+app.use(express.json());
+app.use("/doctors", listDoctors);
 
 // routes
 const router = express.Router();
