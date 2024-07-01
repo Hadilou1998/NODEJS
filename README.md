@@ -2,6 +2,7 @@
 
 Création d'une API JSON en local.
 
+
 # Installation
 
 # Utilisation
@@ -13,3 +14,19 @@ les endpoints (points d'accès) sont définis dans le fichier `db.json`.
 | Objectif | Endpoint | Paramètres |
 | -------- | -------- | ---------- |
 | Accès à tous les docteurs | /doctors |
+
+
+
+
+
+
+
+
+
+
+
+
+
+resp : [ {
+    "result": 5661
+} ]
