@@ -1,20 +1,17 @@
 {
-  "name": "nodejs",
+  "name": "srv-json",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx json-server --watch db.json"
+    "start": "json-server --watch db.json",
+    "start-full": "json-server db.json --watch && cd doctomap && pnpm run dev-tail"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "body-parser": "^1.20.2",
-    "cors": "^2.8.5",
-    "express": "^4.19.2",
-    "json-server": "1.0.0-beta.1",
-    "nodemon": "^3.1.4"
+    "json-server": "1.0.0-beta.1"
   }
 }
