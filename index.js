@@ -1,5 +1,6 @@
 import "./db.json";
 import { deleteDoctor, getAllDoctors, getDoctorById, updateDoctor } from "./routes/Doctor";
+import cors from "cors"
 const express = require("express");
 const bodyParser = require("body-parser");
 const fs = require("fs");
