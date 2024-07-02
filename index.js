@@ -1,31 +1,23 @@
-import "./db.json";
-import listDoctors from "./routes/Doctor";
-import cors from "cors";
-const express = require("express");
-const bodyParser = require("body-parser");
-const fs = require("fs");
+/**
+ * Serveur Express pour la mise en place backend  Node.js
+ */
 
-// Create the express app
-const app = express();
+const express = require('express')// Import de Express
+const app = express() // Application Express
+const port = 4000 // Port de démarrage de l'application 
 
-// middleware
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors());
-app.use(express.json());
-app.use("/doctors", listDoctors);
+app.set('view engine', 'ejs')//Définir ejs comme moteur de template
 
-// routes
-const router = express.Router();
 
-router.get("/doctors", getAllDoctors);
-router.get("/doctor/show", getDoctorById);
-router.put("/doctor/edit", updateDoctor);
-router.delete("/doctor/delete", deleteDoctor);
+//Route "/"accessible avec GET
+app.get('/', (req, res) => {
+    //res, est une réponse HTTP
+    res.send('Bonjour les gens');
+  })
 
-// start server
-app.listen(3000, () => {
-    console.log(`Server started at port http://localhost:3000`);
+//Demarrage de l'application
+app.listen(port, () => {
+    console.log(`
+        Le serveur est en écoute sur le port http://localhost:${port}
+        ctrl+clic (cmd+clic) : http://localhost:${port}`)
 });
-
-export default router;
